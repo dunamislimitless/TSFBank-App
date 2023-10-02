@@ -1,3 +1,5 @@
+import 'package:a_simple_bank_app/CustomWidget/boxentry.dart';
+import 'package:a_simple_bank_app/CustomWidget/card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -71,162 +73,30 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 20,
             ),
-            const SingleChildScrollView(
+            SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(children: [
-                SizedBox(
-                  height: 220,
-                  width: 165,
-                  child: Card(
-                    color: Colors.deepPurpleAccent,
-                    elevation: 30,
-                    shadowColor: Colors.lightBlueAccent,
-                    margin: EdgeInsets.all(8),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
-                    child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                'VISA',
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 24,
-                                    fontStyle: FontStyle.italic,
-                                    fontWeight: FontWeight.w800,
-                                    fontFamily: 'SF-Pro-Display'),
-                              ),
-                            ],
-                          ),
-                          Spacer(),
-                          Text('Salary',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500)),
-                          Text(
-                            '\$ 15,000',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'SF-Pro-Display'),
-                          ),
-                          Text('˚˚688',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500)),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 220,
-                  width: 165,
-                  child: Card(
-                    color: Colors.blueAccent,
-                    elevation: 30,
-                    shadowColor: Colors.lightBlueAccent,
-                    margin: EdgeInsets.all(12),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
-                    child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                'VERVE',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24,
-                                    fontStyle: FontStyle.italic,
-                                    fontWeight: FontWeight.w800,
-                                    fontFamily: 'SF-Pro-Display'),
-                              ),
-                            ],
-                          ),
-                          Spacer(),
-                          Text('Salary',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500)),
-                          Text(
-                            '\$ 27,000',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'SF-Pro-Display'),
-                          ),
-                          Text('˚˚690',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500)),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 220,
-                  width: 165,
-                  child: Card(
-                    color: Colors.pinkAccent,
-                    elevation: 30,
-                    shadowColor: Colors.lightBlueAccent,
-                    margin: EdgeInsets.all(8),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
-                    child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                'MASTER\nCARD',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24,
-                                    fontStyle: FontStyle.italic,
-                                    fontWeight: FontWeight.w800,
-                                    fontFamily: 'SF-Pro-Display'),
-                              ),
-                            ],
-                          ),
-                          Spacer(),
-                          Text('Salary',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500)),
-                          Text(
-                            '\$ 25,000',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'SF-Pro-Display'),
-                          ),
-                          Text('˚˚698',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500)),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                CustomCardWidGet(
+                    cardColor: Colors.deepPurpleAccent,
+                    cardDetails: 'VISA',
+                    cardDetailsColor: Colors.grey,
+                    typeOfPayment: 'Salary',
+                    balanceAmount: '21,000',
+                    cardDigit: '˚˚690'),
+                CustomCardWidGet(
+                    cardColor: Colors.blueAccent,
+                    cardDetails: 'VERVE',
+                    cardDetailsColor: Colors.white,
+                    typeOfPayment: 'Salary',
+                    balanceAmount: '27,000',
+                    cardDigit: '˚˚698'),
+                CustomCardWidGet(
+                    cardColor: Colors.pinkAccent,
+                    cardDetailsColor: Colors.white,
+                    cardDetails: 'MASTER\nCARD',
+                    typeOfPayment: 'Salary',
+                    balanceAmount: '39,000',
+                    cardDigit: '˚˚690'),
               ]),
             ),
             const SizedBox(
@@ -247,7 +117,7 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  const BoxEntry(
+                  BoxEntry(
                       content: 'My Bonuses',
                       contenticon: Icons.wallet_giftcard),
                   const SizedBox(
@@ -257,18 +127,18 @@ class _HomePageState extends State<HomePage> {
                     onTap: () {
                       Navigator.of(context).pushNamed('/CustomerScreen');
                     },
-                    child: const BoxEntry(
+                    child: BoxEntry(
                         content: 'Transfer',
                         contenticon: Icons.arrow_forward_sharp),
                   ),
                   const SizedBox(
                     width: 18,
                   ),
-                  const BoxEntry(content: 'Wallet', contenticon: Icons.wallet),
+                  BoxEntry(content: 'Wallet', contenticon: Icons.wallet),
                   const SizedBox(
                     width: 18,
                   ),
-                  const BoxEntry(
+                  BoxEntry(
                       content: 'Withdrawal',
                       contenticon: Icons.arrow_downward_sharp)
                 ],
@@ -288,68 +158,56 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 15,
             ),
-            Container(
-              height: 80,
-              width: 400,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: const Color.fromARGB(255, 214, 195, 201),
+            Card(
+              margin: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              elevation: 10,
+              color: const Color.fromARGB(255, 235, 209, 217),
+              child: const ListTile(
+                leading: Icon(
+                  Icons.wallet,
+                  color: Colors.pink,
+                ),
+                title: Text(
+                  'Medical N36748923',
+                  style: TextStyle(fontWeight: FontWeight.w700),
+                ),
+                subtitle: Text('Expires 12/22/2023'),
+                trailing: Text('\$78.98 \nRate 2.5 %'),
               ),
             ),
-            const SizedBox(height: 10),
-            Container(
-                height: 80,
-                width: 400,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: Colors.grey))),
-          ])),
-    );
-  }
-}
-
-class BoxEntry extends StatelessWidget {
-  const BoxEntry({super.key, required this.content, required this.contenticon});
-  final String content;
-  final IconData contenticon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: GestureDetector(
-        onTap: () {},
-        child: Container(
-          height: 135,
-          width: 135,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: Colors.black45,
-              border: Border.all(
-                color: Colors.grey,
-              )),
-          child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 12.0, right: 12, top: 25, bottom: 25),
-              child: Column(
-                children: [
-                  Icon(
-                    contenticon,
+            Card(
+              margin: const EdgeInsets.only(left: 10, right: 10, top: 0),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              elevation: 10,
+              color: const Color.fromARGB(255, 80, 79, 79),
+              child: const ListTile(
+                leading: Icon(
+                  Icons.attach_money_sharp,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Transfer N45672346',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w700),
+                ),
+                subtitle: Text(
+                  'Expires 12/22/2023',
+                  style: TextStyle(
                     color: Colors.white,
-                    size: 55,
                   ),
-                  const Spacer(),
-                  Text(
-                    content,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        fontFamily: 'SF-Pro-Display'),
-                  )
-                ],
-              )),
-        ),
-      ),
+                ),
+                trailing: Text(
+                  '\$78.98 \nRate 2.5 %',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ])),
     );
   }
 }
