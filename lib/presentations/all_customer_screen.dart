@@ -19,10 +19,15 @@ class CustomerScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          CustomCard(
-              image: 'assets/images/picture.png',
-              accountName: 'Rebbie Abike',
-              accountNumber: '3082916131'),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed('/ProfilePage');
+            },
+            child: CustomCard(
+                image: 'assets/images/picture.png',
+                accountName: 'Rebbie Abike',
+                accountNumber: '3082916131'),
+          ),
           CustomCard(
               image: 'assets/images/dunamis.png',
               accountName: 'John Doe',
