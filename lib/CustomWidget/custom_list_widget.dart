@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
-  CustomCard(
+  const CustomCard(
       {super.key,
       required this.image,
       required this.accountName,
       required this.accountNumber});
-  dynamic image;
-  String accountName;
-  String accountNumber;
+  final dynamic image;
+  final String accountName;
+  final String accountNumber;
 
   @override
   Widget build(BuildContext context) {

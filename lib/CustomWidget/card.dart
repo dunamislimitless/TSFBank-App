@@ -10,20 +10,22 @@ class CustomCardWidGet extends StatelessWidget {
       required this.typeOfPayment,
       required this.balanceAmount,
       required this.cardDigit,
-      required this.cardDetailsColor});
+      required this.cardDetailsColor,
+      this.size});
 
-  Color cardColor;
-  String cardDetails;
-  String typeOfPayment;
-  String balanceAmount;
-  String cardDigit;
-  Color cardDetailsColor;
+  final Color cardColor;
+  final String cardDetails;
+  final String typeOfPayment;
+  final String balanceAmount;
+  final String cardDigit;
+  final Color cardDetailsColor;
+  double? size;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 220,
-      width: 165,
+      height: size ?? 220,
+      width: size ?? 165,
       child: Card(
         color: cardColor,
         elevation: 30,
