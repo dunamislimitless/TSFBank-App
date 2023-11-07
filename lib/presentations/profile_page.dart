@@ -1,8 +1,17 @@
+import 'package:a_simple_bank_app/model/functions.dart';
 import 'package:a_simple_bank_app/presentations/transfer_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  final String name;
+  final String phone;
+  final String email;
+  const ProfilePage({
+    super.key,
+    required this.name,
+    required this.phone,
+    required this.email,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +58,7 @@ class ProfilePage extends StatelessWidget {
                             fontweight: FontWeight.w400),
                         const Spacer(),
                         CustomText(
-                            text: 'Rebbie Abike',
-                            size: 15,
-                            fontweight: FontWeight.w300),
+                            text: name, size: 15, fontweight: FontWeight.w300),
                       ],
                     ),
                     const Spacer(),
@@ -64,9 +71,7 @@ class ProfilePage extends StatelessWidget {
                             fontweight: FontWeight.w400),
                         const Spacer(),
                         CustomText(
-                            text: 'Rebbieabike@gmail.com',
-                            size: 15,
-                            fontweight: FontWeight.w300),
+                            text: email, size: 15, fontweight: FontWeight.w300),
                       ],
                     ),
                     const Spacer(),
@@ -94,9 +99,7 @@ class ProfilePage extends StatelessWidget {
                             fontweight: FontWeight.w400),
                         const Spacer(),
                         CustomText(
-                            text: '3082916131',
-                            size: 15,
-                            fontweight: FontWeight.w300),
+                            text: phone, size: 15, fontweight: FontWeight.w300),
                       ],
                     ),
                     const Spacer(),
@@ -108,7 +111,6 @@ class ProfilePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).pushNamed('/otpPage');
-          print('floating action button is pressed');
         },
         backgroundColor: const Color.fromARGB(255, 80, 79, 79),
         child: const Icon(Icons.arrow_forward),

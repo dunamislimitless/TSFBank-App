@@ -1,8 +1,17 @@
-import 'package:a_simple_bank_app/CustomWidget/custom_Button.dart';
+import 'package:a_simple_bank_app/CustomWidget/custom_button.dart';
+import 'package:a_simple_bank_app/presentations/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class TransferPage extends StatelessWidget {
-  const TransferPage({super.key});
+  const TransferPage(
+      {super.key,
+      required this.name,
+      required this.phone,
+      required this.email});
+
+  final String name;
+  final String phone;
+  final String email;
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +36,11 @@ class TransferPage extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            CustomText(
-                text: 'Rebbie Abike', size: 20, fontweight: FontWeight.w500),
+            CustomText(text: name, size: 20, fontweight: FontWeight.w500),
             const SizedBox(
               height: 10,
             ),
-            CustomText(
-                text: '3082916131', size: 18, fontweight: FontWeight.normal),
+            CustomText(text: phone, size: 18, fontweight: FontWeight.normal),
             const SizedBox(
               height: 10,
             ),
@@ -58,16 +65,28 @@ class TransferPage extends StatelessWidget {
             //     Navigator.of(context).pushNamed('/ProfilePage');
             //   },
             CustomButton(
-              text: 'Transfer',
-              buttonColor: const Color.fromARGB(255, 80, 79, 79),
-              width: 250,
-              textSize: 15,
-              fontweight: FontWeight.w600,
-              onTap: () {
-                Navigator.of(context).pushNamed('/ProfilePage');
-              },
-            ),
-            // )
+                text: 'Transfer',
+                buttonColor: const Color.fromARGB(255, 80, 79, 79),
+                width: 250,
+                textSize: 15,
+                fontweight: FontWeight.w600,
+                onTap: (() {
+                  {
+                    print(
+                        '||=================tapped=========================||');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProfilePage(
+                          name: name,
+                          phone: phone,
+                          email: email,
+                        ),
+                      ),
+                    );
+                  }
+                })),
+            //
           ],
         ),
       ),
