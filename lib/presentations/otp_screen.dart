@@ -1,8 +1,7 @@
-import 'package:a_simple_bank_app/CustomWidget/custom_Button.dart';
+import 'package:a_simple_bank_app/CustomWidget/custom_button.dart';
 import 'package:a_simple_bank_app/presentations/transfer_page.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_text_field.dart';
-import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 
 class OtpPage extends StatelessWidget {
@@ -30,9 +29,9 @@ class OtpPage extends StatelessWidget {
             style: const TextStyle(fontSize: 17, color: Colors.white),
             textFieldAlignment: MainAxisAlignment.spaceAround,
             fieldStyle: FieldStyle.box,
-            onCompleted: (pin) {
-              print("Completed: $pin");
-            },
+            // onCompleted: (pin) {
+            //   print("Completed: $pin");
+            // },
           ),
           const SizedBox(height: 20),
           CustomButton(
