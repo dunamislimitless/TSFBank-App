@@ -72,8 +72,6 @@ class TransferPage extends StatelessWidget {
                 fontweight: FontWeight.w600,
                 onTap: (() {
                   {
-                    print(
-                        '||=================tapped=========================||');
                     Navigator.push(
                       context,
                       MaterialPageRoute(

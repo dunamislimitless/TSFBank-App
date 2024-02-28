@@ -1,8 +1,7 @@
 import 'package:a_simple_bank_app/model/functions.dart';
 import 'package:a_simple_bank_app/presentations/all_customer_screen.dart';
 import 'package:a_simple_bank_app/presentations/otp_screen.dart';
-import 'package:a_simple_bank_app/presentations/profile_page.dart';
-import 'package:a_simple_bank_app/presentations/transfer_page.dart';
+
 import 'package:a_simple_bank_app/presentations/user_homepage.dart';
 import 'package:a_simple_bank_app/storage/database_helper.dart';
 import 'package:flutter/material.dart';

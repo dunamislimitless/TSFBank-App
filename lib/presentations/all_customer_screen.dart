@@ -46,7 +46,6 @@ class _CustomerScreenState extends State<CustomerScreen> {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: (() {
-                print('||=================tapped=========================||');
                 Navigator.push(
                     context,
                     MaterialPageRoute(

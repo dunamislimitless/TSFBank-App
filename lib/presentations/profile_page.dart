@@ -1,4 +1,3 @@
-import 'package:a_simple_bank_app/model/functions.dart';
 import 'package:a_simple_bank_app/presentations/transfer_page.dart';
 import 'package:flutter/material.dart';
 
